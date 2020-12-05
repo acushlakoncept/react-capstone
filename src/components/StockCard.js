@@ -1,7 +1,10 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { BsGraphDown, BsGraphUp } from 'react-icons/bs';
+import { BsGraphDown, BsGraphUp, BsFillForwardFill } from 'react-icons/bs';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 function StockCard({ stock }) {
   return (
@@ -13,15 +16,20 @@ function StockCard({ stock }) {
         <Card.Text className={stock.percentage > 0 ? 'text-success' : 'text-danger'}>
           { ` ${stock.price} ${stock.currency || 'USD'}` }
           {' '}
-          <br />
-          <em>{ `${stock.percentage}% ` }</em>
+          <BsFillForwardFill />
+          <em>{ ` ${stock.percentage}% ` }</em>
           {stock.percentage > 0 ? <BsGraphUp /> : <BsGraphDown />}
         </Card.Text>
         <Button variant="outline-success mt-auto">Details</Button>
+        {/* <p>
+          API-KEY:
+          {process.env.REACT_APP_API_KEY}
+        </p> */}
       </Card.Body>
     </Card>
   );
 }
+// convert timestamp to date time (new Date(timestamp * 1000)).toLocaleString()
 
 StockCard.propTypes = {
   stock: PropTypes.shape({

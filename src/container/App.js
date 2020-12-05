@@ -1,7 +1,6 @@
 import { Container } from 'react-bootstrap';
 import TopNav from '../components/TopNav';
 import Stockcontainer from './StockContainer';
-import '../App.css';
 
 function App() {
   return (
