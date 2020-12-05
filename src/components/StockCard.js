@@ -5,8 +5,8 @@ import { BsGraphDown, BsGraphUp } from 'react-icons/bs';
 
 function StockCard({ stock }) {
   return (
-    <Card style={{ width: '14rem' }} className="m-2 bg-dark">
-      <Card.Img variant="top" src={stock.image}/>
+    <Card style={{ width: '15rem' }} className="m-2 bg-dark">
+      <Card.Img className="blendMul" variant="top" src={`https://financialmodelingprep.com/image-stock/${stock.symbol}.png`} />
       <Card.Body className="d-flex flex-column">
         <Card.Title className="text-muted font-weight-bold">{ stock.symbol }</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{ stock.company }</Card.Subtitle>
@@ -30,7 +30,6 @@ StockCard.propTypes = {
     price: PropTypes.number.isRequired,
     currency: PropTypes.number,
     percentage: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
   }).isRequired,
 };
 

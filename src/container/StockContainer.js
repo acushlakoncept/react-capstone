@@ -7,7 +7,6 @@ export default function Stockcontainer() {
     price: 250.03,
     percentage: 0.55,
     company: 'Apple Inc',
-    image: 'https://financialmodelingprep.com/image-stock/AAPL.png',
   };
 
   const atlas = {
@@ -15,7 +14,6 @@ export default function Stockcontainer() {
     price: 56.370,
     percentage: 0.660,
     company: 'Atlas Air Worldwide Holdings, Inc.',
-    image: 'https://financialmodelingprep.com/image-stock/AAPL.png',
   };
 
   const pan = {
@@ -23,7 +21,6 @@ export default function Stockcontainer() {
     price: 30.58,
     percentage: -0.110,
     company: 'Pan American Silver Corp.',
-    image: 'https://financialmodelingprep.com/image-stock/AAPL.png',
   };
 
   return (

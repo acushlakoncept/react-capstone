@@ -2,3 +2,6 @@ body {
   background-color: #000;
 }
 
+.blendMul {
+  mix-blend-mode: overlay;
+}
