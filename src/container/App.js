@@ -1,10 +1,12 @@
 import { Container } from 'react-bootstrap';
-import TopNav from './TopNav';
+import TopNav from '../components/TopNav';
+import Stockcontainer from './StockContainer';
 
 function App() {
   return (
     <Container className="pt-5 pb-5">
       <TopNav />
+      <Stockcontainer />
     </Container>
   );
 }
