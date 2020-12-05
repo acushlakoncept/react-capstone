@@ -4,14 +4,18 @@ import PropTypes from 'prop-types';
 
 function StockCard({ stock }) {
   return (
-    <Card style={{ width: '14rem' }} className="m-2">
+    <Card style={{ width: '14rem' }} className="m-2 bg-dark">
       {/* <Card.Img variant="top" src="https://financialmodelingprep.com/image-stock/AAPL.png" /> */}
-      <Card.Body>
-        <Card.Title>{ stock.symbol }</Card.Title>
+      <Card.Body className="d-flex flex-column">
+        <Card.Title className="text-muted font-weight-bold">{ stock.symbol }</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{ stock.company }</Card.Subtitle>
-        <Card.Text className="text-success">{ `${stock.price} ${stock.currency || 'USD'}` }</Card.Text>
-        <Card.Text className="text-success">{ `${stock.percentage}%` }</Card.Text>
-        <Button variant="outline-success">Details</Button>
+        <Card.Text className="text-success">
+          { `${stock.price} ${stock.currency || 'USD'}` }
+          {' '}
+          <br />
+          <em>{ `${stock.percentage}%` }</em>
+        </Card.Text>
+        <Button variant="outline-success mt-auto">Details</Button>
       </Card.Body>
     </Card>
   );
