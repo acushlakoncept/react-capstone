@@ -1,13 +1,11 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { ScaleLoader } from 'react-spinners';
+import PropTypes from 'prop-types';
 import Stockcard from '../components/StockCard';
 import { fetchStocks } from '../redux/stocks/stockActions';
 
-function Stockcontainer({ stockData, fetchStocks }) {
+function StockContainer({ stockData, fetchStocks }) {
   useEffect(() => {
     fetchStocks();
   }, []);
@@ -33,4 +31,19 @@ const mapDispatchToProps = dispatch => ({
   fetchStocks: () => dispatch(fetchStocks()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Stockcontainer);
+StockContainer.propTypes = {
+  stockData: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    stocks: PropTypes.instanceOf(Array).isRequired,
+  }),
+  fetchStocks: PropTypes.func.isRequired,
+};
+
+StockContainer.defaultProps = {
+  stockData: {
+    stocks: [],
+    loading: false,
+  },
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(StockContainer);
