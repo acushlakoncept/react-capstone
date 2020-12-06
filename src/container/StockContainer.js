@@ -1,40 +1,33 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import Stockcard from '../components/StockCard';
+import { fetchStocks } from '../redux/stocks/stockActions';
 
-export default function Stockcontainer() {
-  const apple = {
-    symbol: 'AAPL',
-    price: 250.03,
-    percentage: 0.55,
-    company: 'Apple Inc',
-    dayLow: 30.4123,
-    dayHigh: 31.234,
-  };
+function Stockcontainer({ stockData, fetchStocks }) {
+  useEffect(() => {
+    fetchStocks();
+  }, []);
 
-  const atlas = {
-    symbol: 'AAWW',
-    price: 56.370,
-    percentage: 0.660,
-    company: 'Atlas Air Worldwide Holdings, Inc.',
-    dayLow: 30.4123,
-    dayHigh: 31.234,
-  };
-
-  const pan = {
-    symbol: 'PAAS',
-    price: 30.58,
-    percentage: -0.110,
-    company: 'Pan American Silver Corp.',
-    dayLow: 30.4123,
-    dayHigh: 31.234,
-  };
-
-  return (
+  return stockData.loading ? (
+    <h2>Loading...</h2>
+  ) : (
     <div className="mt-5 d-flex flex-wrap justify-content-center">
-      <Stockcard stock={apple} />
-      <Stockcard stock={atlas} />
-      <Stockcard stock={pan} />
-      <Stockcard stock={atlas} />
+      { stockData.stocks.map(stockInfo => (
+        <Stockcard key={stockInfo.ticker} stock={stockInfo} />
+      )) }
     </div>
   );
 }
+
+const mapStateToProps = state => ({
+  stockData: state.stocks,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchStocks: () => dispatch(fetchStocks()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Stockcontainer);
