@@ -7,6 +7,8 @@ export default function Stockcontainer() {
     price: 250.03,
     percentage: 0.55,
     company: 'Apple Inc',
+    dayLow: 30.4123,
+    dayHigh: 31.234,
   };
 
   const atlas = {
@@ -14,6 +16,8 @@ export default function Stockcontainer() {
     price: 56.370,
     percentage: 0.660,
     company: 'Atlas Air Worldwide Holdings, Inc.',
+    dayLow: 30.4123,
+    dayHigh: 31.234,
   };
 
   const pan = {
@@ -21,6 +25,8 @@ export default function Stockcontainer() {
     price: 30.58,
     percentage: -0.110,
     company: 'Pan American Silver Corp.',
+    dayLow: 30.4123,
+    dayHigh: 31.234,
   };
 
   return (

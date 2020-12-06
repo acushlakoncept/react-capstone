@@ -25,12 +25,12 @@ function StockCard({ stock }) {
             <li>
               <strong>24h Low</strong>
               <br />
-              30.4100
+              {stock.dayLow}
             </li>
             <li>
               <strong>24h High</strong>
               <br />
-              31.1377
+              {stock.dayHigh}
             </li>
           </ul>
           <Button variant="outline-success w-100">Details</Button>
@@ -53,6 +53,8 @@ StockCard.propTypes = {
     price: PropTypes.number.isRequired,
     currency: PropTypes.number,
     percentage: PropTypes.number.isRequired,
+    dayLow: PropTypes.number.isRequired,
+    dayHigh: PropTypes.number.isRequired,
   }).isRequired,
 };
 
