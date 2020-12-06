@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
 export { fetchStocks } from './stocks/stockActions';
+export { fetchStockItem } from './stockItem/stockItemActions';

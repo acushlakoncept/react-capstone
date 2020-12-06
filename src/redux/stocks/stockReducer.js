@@ -3,7 +3,7 @@ import { FETCH_STOCK_REQUEST, FETCH_STOCK_SUCCESS, FETCH_STOCK_FAILURE } from '.
 const initialState = {
   loading: false,
   stocks: [],
-  errors: '',
+  error: '',
 };
 
 const stockReducer = (state = initialState, action) => {
