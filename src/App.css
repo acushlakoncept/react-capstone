@@ -5,3 +5,7 @@ body {
 .blendMul {
   mix-blend-mode: overlay;
 }
+
+.dayPrice {
+  list-style-type: none;
+}

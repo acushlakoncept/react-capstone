@@ -8,19 +8,34 @@ dotenv.config();
 
 function StockCard({ stock }) {
   return (
-    <Card style={{ width: '15rem' }} className="m-2 bg-dark">
+    <Card style={{ width: '16rem' }} className="m-2 bg-dark">
       <Card.Img className="blendMul" variant="top" src={`https://financialmodelingprep.com/image-stock/${stock.symbol}.png`} />
       <Card.Body className="d-flex flex-column">
-        <Card.Title className="text-muted font-weight-bold">{ stock.symbol }</Card.Title>
+        <Card.Title className="text-light font-weight-bold">{ stock.symbol }</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{ stock.company }</Card.Subtitle>
-        <Card.Text className={stock.percentage > 0 ? 'text-success' : 'text-danger'}>
+        <Card.Text className={`d-flex justify-content-between ${stock.percentage > 0 ? 'text-success' : 'text-danger'}`}>
           { ` ${stock.price} ${stock.currency || 'USD'}` }
           {' '}
           <BsFillForwardFill />
           <em>{ ` ${stock.percentage}% ` }</em>
           {stock.percentage > 0 ? <BsGraphUp /> : <BsGraphDown />}
         </Card.Text>
-        <Button variant="outline-success mt-auto">Details</Button>
+        <div className="mt-auto">
+          <ul className="d-flex flex-wrap justify-content-between dayPrice text-muted">
+            <li>
+              <strong>24h Low</strong>
+              <br />
+              30.4100
+            </li>
+            <li>
+              <strong>24h High</strong>
+              <br />
+              31.1377
+            </li>
+          </ul>
+          <Button variant="outline-success w-100">Details</Button>
+        </div>
+
         {/* <p>
           API-KEY:
           {process.env.REACT_APP_API_KEY}
