@@ -1,18 +1,14 @@
 import React, { useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { ScaleLoader } from 'react-spinners';
 import PropTypes from 'prop-types';
 import Stockcard from '../components/StockCard';
 import { fetchStocks } from '../redux/stocks/stockActions';
-import { fetchStockItem } from '../redux';
 
 function StockContainer({ stockData, fetchStocks }) {
   useEffect(() => {
     fetchStocks();
   }, []);
-
-  const dispatch = useDispatch();
-  const handleDetailsBtnClick = symbol => dispatch(fetchStockItem(symbol));
 
   return stockData.loading ? (
     <h2 className="text-center pt-5">
@@ -24,7 +20,6 @@ function StockContainer({ stockData, fetchStocks }) {
         <Stockcard
           key={stockInfo.ticker}
           stock={stockInfo}
-          handleDetailClick={() => handleDetailsBtnClick(stockInfo.ticker)}
         />
       )) }
     </div>

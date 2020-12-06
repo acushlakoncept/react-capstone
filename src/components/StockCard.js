@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { BsGraphDown, BsGraphUp, BsFillForwardFill } from 'react-icons/bs';
 import notFound from '../imgs/not_found.jpg';
 
-function StockCard({ stock, handleDetailClick }) {
+function StockCard({ stock }) {
   const justPercent = stock.changesPercentage.match(/(-|\+)|(\.)|\d+/g).join('');
   const percentage = parseFloat(justPercent);
   return (
@@ -28,7 +28,7 @@ function StockCard({ stock, handleDetailClick }) {
           {percentage > 0 ? <BsGraphUp /> : <BsGraphDown />}
         </Card.Text>
         <div className="mt-auto">
-          <Button onClick={handleDetailClick} variant="outline-success w-100">Details</Button>
+          <a href={`\\${stock.ticker}`} className="btn btn-outline-success w-100">Details</a>
         </div>
       </Card.Body>
     </Card>
@@ -43,7 +43,6 @@ StockCard.propTypes = {
     currency: PropTypes.string,
     changesPercentage: PropTypes.string.isRequired,
   }).isRequired,
-  handleDetailClick: PropTypes.func.isRequired,
 };
 
 export default StockCard;
