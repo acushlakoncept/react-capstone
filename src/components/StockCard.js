@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { BsGraphDown, BsGraphUp, BsFillForwardFill } from 'react-icons/bs';
 import notFound from '../imgs/not_found.jpg';
 
-function StockCard({ stock }) {
+function StockCard({ stock, handleDetailClick }) {
   const justPercent = stock.changesPercentage.match(/(-|\+)|(\.)|\d+/g).join('');
   const percentage = parseFloat(justPercent);
   return (
@@ -28,7 +28,7 @@ function StockCard({ stock }) {
           {percentage > 0 ? <BsGraphUp /> : <BsGraphDown />}
         </Card.Text>
         <div className="mt-auto">
-          <Button variant="outline-success w-100">Details</Button>
+          <Button onClick={handleDetailClick} variant="outline-success w-100">Details</Button>
         </div>
       </Card.Body>
     </Card>
@@ -43,6 +43,7 @@ StockCard.propTypes = {
     currency: PropTypes.string,
     changesPercentage: PropTypes.string.isRequired,
   }).isRequired,
+  handleDetailClick: PropTypes.func.isRequired,
 };
 
 export default StockCard;
