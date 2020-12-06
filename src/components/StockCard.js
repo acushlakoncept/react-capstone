@@ -11,18 +11,20 @@ import notFound from '../imgs/not_found.jpg';
 function StockCard({ stock }) {
 //   console.log(imageExists('https://financialmodelingprep.com/image-stock/XPEV.png'));
 // <img src="http://example.com/non-existent-image.jpg" onerror="this.onerror=null;this.src='http://example.com/existent-image.jpg';" />
+  const justPercent = stock.changesPercentage.match(/(-|\+)|(\.)|\d+/g).join('');
+  const percentage = parseFloat(justPercent);
   return (
     <Card style={{ width: '16rem' }} className="m-2 bg-dark">
       <Card.Img className="blendMul" variant="top" src={`https://financialmodelingprep.com/image-stock/${stock.ticker}.png`} onerror={`this.src=${notFound}`} />
       <Card.Body className="d-flex flex-column">
         <Card.Title className="text-light font-weight-bold">{ stock.ticker }</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{ stock.companyName }</Card.Subtitle>
-        <Card.Text className={`d-flex justify-content-between ${stock.changesPercentage > 0 ? 'text-success' : 'text-danger'}`}>
+        <Card.Text className={`d-flex justify-content-between ${percentage > 0 ? 'text-success' : 'text-danger'}`}>
           { ` ${stock.price} ${stock.currency || 'USD'}` }
           {' '}
           <BsFillForwardFill />
-          <em>{ stock.changesPercentage }</em>
-          {stock.changesPercentage > 0 ? <BsGraphUp /> : <BsGraphDown />}
+          <em>{ `${percentage}%` }</em>
+          {percentage > 0 ? <BsGraphUp /> : <BsGraphDown />}
         </Card.Text>
         <div className="mt-auto">
           {/* <ul className="d-flex flex-wrap justify-content-between dayPrice text-muted">
