@@ -20,10 +20,10 @@ export default function Stockdetail() {
               <FcBullish size={40} />
             </small>
           </h1>
-          <h4>
+          <h4 className="text-center text-success">
             Apple Inc
             <BsFillForwardFill color="transparent" />
-            Industry: Consumer Electronics
+            <small>Industry: Consumer Electronics</small>
             <hr />
           </h4>
           <p className="lead text-justify readMaxLength">
