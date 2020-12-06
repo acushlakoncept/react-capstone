@@ -9,3 +9,13 @@ body {
 .dayPrice {
   list-style-type: none;
 }
+
+.priceChange {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.readMaxLength {
+  max-width: 650px;
+  margin: 0 auto;
+}

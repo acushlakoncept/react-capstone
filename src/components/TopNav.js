@@ -22,7 +22,7 @@ export default function TopNav() {
           placeholder="Search Stock"
           className="mr-sm-2"
         />
-        <Button variant="outline-info">Search</Button>
+        <Button variant="outline-success">Search</Button>
       </Form>
     </Navbar>
   );

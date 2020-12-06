@@ -6,13 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import store from './redux/store';
-import StockdetailsContainer from './container/StockDetailsContainer';
+import Detailpage from './pages/DetailPage';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       {/* <App /> */}
-      <StockdetailsContainer />
+      <Detailpage />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
