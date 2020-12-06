@@ -2,9 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { BsGraphDown, BsGraphUp, BsFillForwardFill } from 'react-icons/bs';
-import dotenv from 'dotenv';
 
-dotenv.config();
 
 function StockCard({ stock }) {
   return (
