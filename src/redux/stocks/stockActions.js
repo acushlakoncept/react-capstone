@@ -21,7 +21,9 @@ export const fetchStocks = () => function (dispatch) {
   axios
     .get(STOCK_LIST_URL, { mode: 'cors' })
     .then(response => {
-      dispatch(fetchStocksSuccess(response.data));
+      const { data } = response;
+      console.log(data.ticker);
+    //   dispatch(fetchStocksSuccess(response.data));
     })
     .catch(error => {
       dispatch(fetchStocksFailure(error.message));
