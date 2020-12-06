@@ -15,7 +15,14 @@ function StockCard({ stock }) {
   const percentage = parseFloat(justPercent);
   return (
     <Card style={{ width: '16rem' }} className="m-2 bg-dark">
-      <Card.Img className="blendMul" variant="top" src={`https://financialmodelingprep.com/image-stock/${stock.ticker}.png`} onerror={`this.src=${notFound}`} />
+      <Card.Img
+        className="blendMul"
+        variant="top"
+        src={`https://financialmodelingprep.com/image-stock/${stock.ticker}.png`}
+        onError={e => {
+          e.target.src = notFound;
+        }}
+      />
       <Card.Body className="d-flex flex-column">
         <Card.Title className="text-light font-weight-bold">{ stock.ticker }</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{ stock.companyName }</Card.Subtitle>
