@@ -22,7 +22,7 @@ export const fetchStockItem = symbol => function (dispatch) {
     .get(stockProfileUrl(symbol), { mode: 'cors' })
     .then(response => {
       const { data } = response;
-      dispatch(fetchStockItemSuccess({ data }));
+      dispatch(fetchStockItemSuccess(data[0]));
     })
     .catch(error => {
       dispatch(fetchStockItemFailure(error.message));
