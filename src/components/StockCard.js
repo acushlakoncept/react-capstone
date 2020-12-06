@@ -3,7 +3,6 @@ import { Card, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { BsGraphDown, BsGraphUp, BsFillForwardFill } from 'react-icons/bs';
 
-
 function StockCard({ stock }) {
   return (
     <Card style={{ width: '16rem' }} className="m-2 bg-dark">
