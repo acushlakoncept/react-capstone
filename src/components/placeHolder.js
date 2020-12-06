@@ -1,0 +1,27 @@
+// eslint-disable-next-line no-unused-vars
+const stock = [
+  {
+    symbol: 'ATRI',
+    name: 'Atrion Corporation',
+    price: 638.62000000,
+    changesPercentage: 3.79000000,
+    change: 23.32000000,
+    dayLow: 618.00000000,
+    dayHigh: 647.00500000,
+    yearHigh: 764.49000000,
+    yearLow: 567.00000000,
+    marketCap: 1168004096.00000000,
+    priceAvg50: 613.87770000,
+    priceAvg200: 637.52106000,
+    volume: 12613,
+    avgVolume: 7504,
+    exchange: 'NASDAQ',
+    open: 623.47000000,
+    previousClose: 615.30000000,
+    eps: 17.74900000,
+    pe: 35.98061800,
+    earningsAnnouncement: '2020-11-09T16:30:00.000+0000',
+    sharesOutstanding: 1828950,
+    timestamp: 1607216225,
+  },
+];
