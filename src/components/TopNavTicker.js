@@ -7,7 +7,7 @@ import {
   Button,
 } from 'react-bootstrap';
 
-export default function TopNav2() {
+export default function TopNavTicker() {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="/">STOCKIST</Navbar.Brand>

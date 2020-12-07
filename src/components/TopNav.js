@@ -22,7 +22,7 @@ export default function TopNav({ handleOnSelect }) {
           <option value="gainers">Most Gainers </option>
           <option value="losers">Most Losers </option>
         </Form.Control>
-        <Button variant="outline-success">Search</Button>
+        <Button variant="outline-success">Filter by category</Button>
       </Form>
     </Navbar>
   );
