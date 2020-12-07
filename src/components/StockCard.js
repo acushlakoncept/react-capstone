@@ -10,7 +10,6 @@ function StockCard({ stock }) {
   return (
     <Card style={{ width: '16rem' }} className="m-2 bg-dark">
       <Card.Img
-        className="blendMul"
         variant="top"
         src={`https://financialmodelingprep.com/image-stock/${stock.ticker}.png`}
         onError={e => {
