@@ -2,20 +2,12 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { BsGraphDown, BsGraphUp, BsFillForwardFill } from 'react-icons/bs';
-import notFound from '../imgs/not_found.jpg';
 
 function StockCard({ stock }) {
   const justPercent = stock.changesPercentage.match(/(-|\+)|(\.)|\d+/g).join('');
   const percentage = parseFloat(justPercent);
   return (
     <Card style={{ width: '16rem' }} className="m-2 bg-dark">
-      <Card.Img
-        variant="top"
-        src={`https://financialmodelingprep.com/image-stock/${stock.ticker}.png`}
-        onError={e => {
-          e.target.src = notFound;
-        }}
-      />
       <Card.Body className="d-flex flex-column">
         <Card.Title className="text-light font-weight-bold">{ stock.ticker }</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{ stock.companyName }</Card.Subtitle>
