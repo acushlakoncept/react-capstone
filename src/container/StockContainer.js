@@ -11,10 +11,13 @@ function StockContainer({ stockData, fetchStocks }) {
     fetchStocks(url);
   }, [url]);
 
+  // eslint-disable-next-line no-nested-ternary
   return stockData.loading ? (
     <h2 className="text-center pt-5">
       <ScaleLoader size={16} color="green" />
     </h2>
+  ) : stockData.error ? (
+    <h2 className="text-center pt-5">Kindly check back, Server currently not responding</h2>
   ) : (
     <div className="mt-5 d-flex flex-wrap justify-content-center">
       { stockData.stocks.map(stockInfo => (
@@ -39,6 +42,7 @@ StockContainer.propTypes = {
   stockData: PropTypes.shape({
     loading: PropTypes.bool.isRequired,
     stocks: PropTypes.instanceOf(Array).isRequired,
+    error: PropTypes.string,
   }),
   fetchStocks: PropTypes.func.isRequired,
 };
