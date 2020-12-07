@@ -8,8 +8,8 @@ const history = createBrowserHistory();
 
 const Routes = () => (
   <Router history={history}>
+    <Route exact path="/" component={App} />
     <Route exact path="/:ticker" component={Stock} />
-    <Route path="/" component={App} />
   </Router>
 );
 
