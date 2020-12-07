@@ -16,6 +16,7 @@ export const fetchStockItemFailure = error => ({
   payload: error,
 });
 
+// eslint-disable-next-line func-names
 export const fetchStockItem = symbol => function (dispatch) {
   dispatch(fetchStockItemRequest());
   axios
