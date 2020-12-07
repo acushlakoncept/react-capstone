@@ -49,14 +49,14 @@ export default function StockDetail({ stockItem }) {
 
 StockDetail.propTypes = {
   stockItem: PropTypes.shape({
-    symbol: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    changes: PropTypes.number.isRequired,
-    companyName: PropTypes.string.isRequired,
-    industry: PropTypes.string.isRequired,
-    website: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    symbol: PropTypes.string,
+    price: PropTypes.number,
+    changes: PropTypes.number,
+    companyName: PropTypes.string,
+    industry: PropTypes.string,
+    website: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
   }),
 };
 

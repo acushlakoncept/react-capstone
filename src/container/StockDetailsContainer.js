@@ -1,59 +1,64 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { ScaleLoader } from 'react-spinners';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import StockDetail from '../components/StockDetail';
 import { fetchStockItem } from '../redux/index';
 
-function StockDetailsContainer({ stockItemData }) {
+export default function StockDetailsContainer() {
   const { ticker } = useParams();
+  // const [stockItem, setStockItem] = useState([]);
+  const dispatch = useDispatch();
+  const { stockItem } = useSelector(state => state.stockItem);
 
   useEffect(() => {
-    fetchStockItem(ticker);
-  }, [ticker]);
+    dispatch(fetchStockItem(ticker));
+  }, [dispatch]);
 
-  console.log(ticker);
-  const apple = {
-    symbol: 'AAPL',
-    price: 122.25,
-    changes: -0.69,
-    companyName: 'Apple Inc',
-    website: 'https://www.apple.com/',
-    industry: 'Consumer Electronics',
-    description: 'Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. It also sells various related services. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories comprising AirPods, Apple TV, Apple Watch, Beats products, HomePod, iPod touch, and other Apple-branded and third-party accessories.',
-    image: 'https://financialmodelingprep.com/image-stock/AAPL.png',
-  };
+  // const apple = {
+  //   symbol: 'AAPL',
+  //   price: 122.25,
+  //   changes: -0.69,
+  //   companyName: 'Apple Inc',
+  //   website: 'https://www.apple.com/',
+  //   industry: 'Consumer Electronics',
+  // eslint-disable-next-line max-len
+  //   description: 'Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. It also sells various related services. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories comprising AirPods, Apple TV, Apple Watch, Beats products, HomePod, iPod touch, and other Apple-branded and third-party accessories.',
+  //   image: 'https://financialmodelingprep.com/image-stock/AAPL.png',
+  // };
 
-  return stockItemData.loading ? (
+  return stockItem.loading ? (
     <h2 className="text-center pt-5">
+      {console.log(stockItem.changes)}
       <ScaleLoader size={16} color="white" />
     </h2>
   ) : (
-    <StockDetail stockItem={stockItemData.stockItem} />
+    <StockDetail stockItem={stockItem} />
+
   );
 }
 
-const mapStateToProps = state => ({
-  stockItemData: state.stockItem,
-});
+// const mapStateToProps = state => ({
+//   stockItemData: state.stockItem,
+// });
 
-const mapDispatchToProps = dispatch => ({
-  fetchStockItem: ticker => dispatch(fetchStockItem(ticker)),
-});
+// const mapDispatchToProps = dispatch => ({
+//   fetchStockItem: ticker => dispatch(fetchStockItem(ticker)),
+// });
 
-StockDetailsContainer.propTypes = {
-  stockItemData: PropTypes.shape({
-    loading: PropTypes.bool.isRequired,
-    stockItem: PropTypes.shape({}).isRequired,
-  }),
-};
+// StockDetailsContainer.propTypes = {
+//   stockItemData: PropTypes.shape({
+//     loading: PropTypes.bool.isRequired,
+//     stockItem: PropTypes.shape({}).isRequired,
+//   }),
+// };
 
-StockDetailsContainer.defaultProps = {
-  stockItemData: {
-    loading: false,
-    stockItem: {},
-  },
-};
+// StockDetailsContainer.defaultProps = {
+//   stockItemData: {
+//     loading: false,
+//     stockItem: {},
+//   },
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(StockDetailsContainer);
+// export default connect(mapStateToProps, mapDispatchToProps)(StockDetailsContainer);
