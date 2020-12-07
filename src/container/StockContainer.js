@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { ScaleLoader } from 'react-spinners';
 import PropTypes from 'prop-types';
 import Stockcard from '../components/StockCard';
 import { fetchStocks } from '../redux/stocks/stockActions';
 
 function StockContainer({ stockData, fetchStocks }) {
+  const url = useSelector(state => state.urlType);
   useEffect(() => {
-    fetchStocks();
-  }, []);
+    fetchStocks(url);
+  }, [url]);
 
   return stockData.loading ? (
     <h2 className="text-center pt-5">
@@ -31,7 +32,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchStocks: () => dispatch(fetchStocks()),
+  fetchStocks: url => dispatch(fetchStocks(url)),
 });
 
 StockContainer.propTypes = {
