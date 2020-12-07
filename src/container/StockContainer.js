@@ -12,7 +12,7 @@ function StockContainer({ stockData, fetchStocks }) {
 
   return stockData.loading ? (
     <h2 className="text-center pt-5">
-      <ScaleLoader size={16} color="white" />
+      <ScaleLoader size={16} color="green" />
     </h2>
   ) : (
     <div className="mt-5 d-flex flex-wrap justify-content-center">
