@@ -3,11 +3,11 @@ import {
   Navbar,
   Nav,
   Form,
-  FormControl,
   Button,
 } from 'react-bootstrap';
 
-export default function TopNav() {
+// eslint-disable-next-line react/prop-types
+export default function TopNav({ handleOnSelect }) {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="/">STOCKIST</Navbar.Brand>
@@ -17,11 +17,11 @@ export default function TopNav() {
         <Nav.Link href="#pricing">Stock News</Nav.Link>
       </Nav>
       <Form inline>
-        <FormControl
-          type="text"
-          placeholder="Search Stock"
-          className="mr-sm-2"
-        />
+        <Form.Control onChange={handleOnSelect} as="select" className="mr-sm-2">
+          <option value="active">Most Active </option>
+          <option value="gainers">Most Gainers </option>
+          <option value="losers">Most Losers </option>
+        </Form.Control>
         <Button variant="outline-success">Search</Button>
       </Form>
     </Navbar>
