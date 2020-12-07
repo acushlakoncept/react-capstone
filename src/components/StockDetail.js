@@ -2,7 +2,7 @@ import React from 'react';
 import { Jumbotron, Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { BsFillForwardFill } from 'react-icons/bs';
-import { FcBullish } from 'react-icons/fc';
+import { FcBullish, FcBearish } from 'react-icons/fc';
 import notFound from '../imgs/not_found.jpg';
 
 export default function StockDetail({ stockItem }) {
@@ -20,9 +20,9 @@ export default function StockDetail({ stockItem }) {
               <BsFillForwardFill color="transparent" />
               Price change:
               {' '}
-              { stockItem.changes }
+              <span className={`${stockItem.changes > 0 ? 'text-success' : 'text-danger'}`}>{ stockItem.changes }</span>
               <BsFillForwardFill color="transparent" />
-              <FcBullish size={40} />
+              {stockItem.changes > 0 ? <FcBullish size={40} /> : <FcBearish size={40} />}
             </small>
           </h1>
           <h4 className="text-center text-success">
