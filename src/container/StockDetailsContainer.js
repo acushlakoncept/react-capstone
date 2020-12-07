@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { ScaleLoader } from 'react-spinners';
@@ -7,9 +7,9 @@ import { fetchStockItem } from '../redux/index';
 
 export default function StockDetailsContainer() {
   const { ticker } = useParams();
-  const [loading] = useState(false);
   const dispatch = useDispatch();
   const { stockItem } = useSelector(state => state.stockItem);
+  const loading = useSelector(state => state.loading);
 
   useEffect(() => {
     dispatch(fetchStockItem(ticker));
@@ -21,6 +21,5 @@ export default function StockDetailsContainer() {
     </h2>
   ) : (
     <StockDetail stockItem={stockItem} />
-
   );
 }
