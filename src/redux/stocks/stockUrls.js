@@ -4,6 +4,8 @@ dotenv.config();
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const STOCK_LIST_URL = `https://financialmodelingprep.com/api/v3/actives?apikey=${API_KEY}`;
+export const STOCK_GAINERS = `https://financialmodelingprep.com/api/v3/gainers?apikey=${API_KEY}`;
+export const STOCK_LOSERS = `https://financialmodelingprep.com/api/v3/losers?apikey=${API_KEY}`;
 
 export const stockQuoteUrl = stockSymbol => (
   `https://financialmodelingprep.com/api/v3/quote/${stockSymbol}?apikey=${API_KEY}`
