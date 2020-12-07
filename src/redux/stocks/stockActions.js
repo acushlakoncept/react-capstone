@@ -1,6 +1,8 @@
 import axios from 'axios';
-import { FETCH_STOCK_REQUEST, FETCH_STOCK_SUCCESS, FETCH_STOCK_FAILURE } from './stockTypes';
-import { STOCK_LIST_URL } from './stockUrls';
+import {
+  FETCH_STOCK_REQUEST, FETCH_STOCK_SUCCESS, FETCH_STOCK_FAILURE,
+} from './stockTypes';
+import { STOCK_LIST_URL, STOCK_LOSERS, STOCK_GAINERS } from './stockUrls';
 
 export const fetchStocksRequest = () => ({
   type: FETCH_STOCK_REQUEST,
@@ -17,10 +19,15 @@ export const fetchStocksFailure = error => ({
 });
 
 // eslint-disable-next-line func-names
-export const fetchStocks = () => function (dispatch) {
+export const fetchStocks = urlType => function (dispatch) {
+  let url = STOCK_LIST_URL;
+  if (urlType === 'active') url = STOCK_LIST_URL;
+  if (urlType === 'gainers') url = STOCK_GAINERS;
+  if (urlType === 'losers') url = STOCK_LOSERS;
+
   dispatch(fetchStocksRequest());
   axios
-    .get(STOCK_LIST_URL, { mode: 'cors' })
+    .get(url, { mode: 'cors' })
     .then(response => {
       const { data } = response;
       dispatch(fetchStocksSuccess(data));
