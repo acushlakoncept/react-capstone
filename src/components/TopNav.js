@@ -10,9 +10,9 @@ import {
 export default function TopNav() {
   return (
     <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="#home">STOCKIST</Navbar.Brand>
+      <Navbar.Brand href="/">STOCKIST</Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
+        <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="#features">About</Nav.Link>
         <Nav.Link href="#pricing">Stock News</Nav.Link>
       </Nav>

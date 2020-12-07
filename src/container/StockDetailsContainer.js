@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { ScaleLoader } from 'react-spinners';
+import PropTypes from 'prop-types';
 import StockDetail from '../components/StockDetail';
+import { fetchStockItem } from '../redux/index';
 
-export default function StockDetailsContainer() {
+function StockDetailsContainer({ stockItemData }) {
+  const { ticker } = useParams();
+
+  useEffect(() => {
+    fetchStockItem(ticker);
+  }, [ticker]);
+
+  console.log(ticker);
   const apple = {
     symbol: 'AAPL',
     price: 122.25,
@@ -13,7 +25,35 @@ export default function StockDetailsContainer() {
     image: 'https://financialmodelingprep.com/image-stock/AAPL.png',
   };
 
-  return (
-    <StockDetail stockItem={apple} />
+  return stockItemData.loading ? (
+    <h2 className="text-center pt-5">
+      <ScaleLoader size={16} color="white" />
+    </h2>
+  ) : (
+    <StockDetail stockItem={stockItemData.stockItem} />
   );
 }
+
+const mapStateToProps = state => ({
+  stockItemData: state.stockItem,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchStockItem: ticker => dispatch(fetchStockItem(ticker)),
+});
+
+StockDetailsContainer.propTypes = {
+  stockItemData: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    stockItem: PropTypes.shape({}).isRequired,
+  }),
+};
+
+StockDetailsContainer.defaultProps = {
+  stockItemData: {
+    loading: false,
+    stockItem: {},
+  },
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(StockDetailsContainer);
