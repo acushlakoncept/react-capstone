@@ -14,8 +14,7 @@ export default function TopNavTicker({ handleFormClick }) {
       <Navbar.Brand href="/">STOCKIST</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="#features">About</Nav.Link>
-        <Nav.Link href="#pricing">Stock News</Nav.Link>
+        <Nav.Link href="/news">Stock News</Nav.Link>
       </Nav>
       <Form inline onSubmit={handleFormClick}>
         <FormControl
