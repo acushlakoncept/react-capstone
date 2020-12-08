@@ -4,10 +4,10 @@ import Footer from '../components/Footer';
 import TopNavTicker from '../components/TopNavTicker';
 import StockDetailsContainer from '../container/StockDetailsContainer';
 
-export default function Detailpage() {
+export default function DetailPage() {
   const handleFormClick = e => {
     e.preventDefault();
-    const url = `/${e.target[0].value}`;
+    const url = `/stock/${e.target[0].value}`;
     window.location.href = url;
   };
   return (

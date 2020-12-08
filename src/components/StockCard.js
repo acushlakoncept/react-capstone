@@ -19,7 +19,7 @@ function StockCard({ stock }) {
           {percentage > 0 ? <BsGraphUp /> : <BsGraphDown />}
         </Card.Text>
         <div className="mt-auto">
-          <a href={`\\${stock.ticker}`} className="btn btn-outline-success w-100">Details</a>
+          <a href={`\\stock\\${stock.ticker}`} className="btn btn-outline-success w-100">Details</a>
         </div>
       </Card.Body>
     </Card>
