@@ -6,6 +6,7 @@ import { FcBullish, FcBearish } from 'react-icons/fc';
 import notFound from '../imgs/not_found.jpg';
 
 export default function StockDetail({ stockItem }) {
+  // eslint-disable-next-line no-nested-ternary
   return (
     <div>
       <Jumbotron fluid>

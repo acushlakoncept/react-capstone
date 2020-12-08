@@ -15,9 +15,14 @@ export default function StockDetailsContainer() {
     dispatch(fetchStockItem(ticker));
   }, [dispatch]);
 
+  // eslint-disable-next-line no-nested-ternary
   return loading ? (
     <h2 className="text-center pt-5">
       <ScaleLoader size={16} color="white" />
+    </h2>
+  ) : stockItem === undefined ? (
+    <h2 className="text-center pt-5 pb-5">
+      Stock Item Not Found!
     </h2>
   ) : (
     <StockDetail stockItem={stockItem} />
