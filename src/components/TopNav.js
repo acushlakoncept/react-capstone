@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Navbar,
   Nav,
@@ -6,8 +7,7 @@ import {
   Button,
 } from 'react-bootstrap';
 
-// eslint-disable-next-line react/prop-types
-export default function TopNav({ handleOnSelect }) {
+function TopNav({ handleOnSelect }) {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="/">STOCKIST</Navbar.Brand>
@@ -29,3 +29,9 @@ export default function TopNav({ handleOnSelect }) {
     </Navbar>
   );
 }
+
+TopNav.propTypes = {
+  handleOnSelect: PropTypes.func.isRequired,
+};
+
+export default TopNav;
