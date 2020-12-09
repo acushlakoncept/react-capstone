@@ -52,7 +52,7 @@ Start server with:
 ```
 ### Running Test
 Jest is used to run all the tests found in this application
-In order to run the test you can simply type `jest` or `npm run test`
+In order to run the test you can simply type `yarn test` or `npm run test`
 
 Either ways, if you encounter any error while running either command, its likely you do not have `jest` installed globally, so please run `npm install -g jest-cli` then try again. That should do it.
 
