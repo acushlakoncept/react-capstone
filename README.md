@@ -17,6 +17,9 @@ The application features includes:
 ## Live Demo
 [Live Demo](https://cush-stocks.herokuapp.com/)
 
+## Video Presentation
+[YouTube Link](https://youtu.be/l5s8WUlm1L8)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
