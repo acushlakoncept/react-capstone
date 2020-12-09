@@ -12,7 +12,7 @@ The application features includes:
 - Listing of the lastest stock news
 - Dynamic routes for individual stock item, example `/stocks/AAPL`
 
-![screenshot](./bookstore.gif)
+![screenshot](./stockist.gif)
 
 ## Live Demo
 [Live Demo](https://cush-stocks.herokuapp.com/)
