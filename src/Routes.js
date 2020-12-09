@@ -12,7 +12,6 @@ const Routes = () => (
     <Route exact path="/" component={App} />
     <Route exact path="/news" component={StockNews} />
     <Route exact path="/stock/:ticker" component={Stock} />
-    {/* <Route path="*" exact component={NotFound} /> */}
   </Router>
 );
 

@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { ScaleLoader } from 'react-spinners';
@@ -11,6 +10,7 @@ function StockNewsContainer({ newsData, fetchNews }) {
     fetchNews();
   }, []);
 
+  // eslint-disable-next-line no-nested-ternary
   return newsData.loading ? (
     <h2 className="text-center pt-5">
       <ScaleLoader size={16} color="green" />
