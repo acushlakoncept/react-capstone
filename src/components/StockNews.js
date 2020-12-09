@@ -1,11 +1,10 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Jumbotron, Container, Row, Col,
 } from 'react-bootstrap';
 
-export default function StockNews({ news }) {
+function StockNews({ news }) {
   return (
     <Jumbotron fluid className="rounded mt-3 mb-2">
       <Container>
@@ -34,3 +33,20 @@ export default function StockNews({ news }) {
     </Jumbotron>
   );
 }
+
+StockNews.propTypes = {
+  news: PropTypes.shape({
+    image: PropTypes.string,
+    symbol: PropTypes.string,
+    title: PropTypes.string,
+    publishedDate: PropTypes.string,
+    text: PropTypes.string,
+    url: PropTypes.string,
+  }),
+};
+
+StockNews.defaultProps = {
+  news: {},
+};
+
+export default StockNews;
