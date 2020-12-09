@@ -1,8 +1,8 @@
 /* eslint-disable no-nested-ternary */
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { ScaleLoader } from 'react-spinners';
+import PropTypes from 'prop-types';
 import StockNews from '../components/StockNews';
 import { fetchNews } from '../redux';
 
@@ -36,5 +36,18 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchNews: () => dispatch(fetchNews()),
 });
+
+StockNewsContainer.propTypes = {
+  newsData: PropTypes.shape({
+    news: PropTypes.shape([]),
+    loading: PropTypes.bool,
+    error: PropTypes.string,
+  }),
+  fetchNews: PropTypes.func.isRequired,
+};
+
+StockNewsContainer.defaultProps = {
+  newsData: {},
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(StockNewsContainer);
