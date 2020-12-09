@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders StockDetail correctly 1`] = `
+<div>
+  <div
+    className="jumbotron jumbotron-fluid"
+  >
+    <div
+      className="container"
+    >
+      <h1
+        className="shadow-sm pb-2 mb-3"
+      >
+        AAPL
+        <small
+          className="priceChange"
+        >
+          <svg
+            color="transparent"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": "transparent",
+              }
+            }
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.77 12.11l4.012-2.953a.647.647 0 000-1.114L9.771 5.09a.644.644 0 00-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"
+            />
+          </svg>
+          Price:
+           
+          230.54
+          <svg
+            color="transparent"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": "transparent",
+              }
+            }
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.77 12.11l4.012-2.953a.647.647 0 000-1.114L9.771 5.09a.644.644 0 00-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"
+            />
+          </svg>
+          Price change:
+           
+          <span
+            className="text-success"
+          >
+            2.02
+          </span>
+          <svg
+            color="transparent"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": "transparent",
+              }
+            }
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.77 12.11l4.012-2.953a.647.647 0 000-1.114L9.771 5.09a.644.644 0 00-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"
+            />
+          </svg>
+          <svg
+            enableBackground="new 0 0 48 48"
+            fill="currentColor"
+            height={40}
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            version="1"
+            viewBox="0 0 48 48"
+            width={40}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="#4CAF50"
+            >
+              <rect
+                height="23"
+                width="4"
+                x="40"
+                y="21"
+              />
+              <rect
+                height="16"
+                width="4"
+                x="34"
+                y="28"
+              />
+              <rect
+                height="21"
+                width="4"
+                x="28"
+                y="23"
+              />
+              <rect
+                height="15"
+                width="4"
+                x="22"
+                y="29"
+              />
+              <rect
+                height="12"
+                width="4"
+                x="16"
+                y="32"
+              />
+              <rect
+                height="14"
+                width="4"
+                x="10"
+                y="30"
+              />
+              <rect
+                height="10"
+                width="4"
+                x="4"
+                y="34"
+              />
+            </g>
+            <g
+              fill="#388E3C"
+            >
+              <polygon
+                points="40.1,9.1 34,15.2 30,11.2 20,21.2 15,16.2 4.6,26.6 7.4,29.4 15,21.8 20,26.8 30,16.8 34,20.8 42.9,11.9"
+              />
+              <polygon
+                points="44,8 35,8 44,17"
+              />
+            </g>
+          </svg>
+        </small>
+      </h1>
+      <h4
+        className="text-center text-success"
+      >
+        Apple Inc
+        <svg
+          color="transparent"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": "transparent",
+            }
+          }
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.77 12.11l4.012-2.953a.647.647 0 000-1.114L9.771 5.09a.644.644 0 00-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"
+          />
+        </svg>
+        <small>
+          Industry:
+          tech
+        </small>
+        <hr />
+      </h4>
+      <p
+        className="lead text-justify readMaxLength"
+      >
+        <img
+          alt="AAPL"
+          className="float-left m-2 img-thumbnail w-25"
+          onError={[Function]}
+          src="http://imagesite.com/image.png"
+        />
+        Apple is a giant tech company
+        <a
+          href="https://apple.com"
+          rel="noopener"
+          target="__blank"
+        >
+           
+          Visit Website
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
