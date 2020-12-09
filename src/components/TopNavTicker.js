@@ -30,7 +30,15 @@ function TopNavTicker({ handleFormClick }) {
 }
 
 TopNavTicker.propTypes = {
-  handleFormClick: PropTypes.func.isRequired,
+  handleFormClick: PropTypes.func,
+};
+
+TopNavTicker.defaultProps = {
+  handleFormClick: e => {
+    e.preventDefault();
+    const url = `/stock/${e.target[0].value}`;
+    window.location.href = url;
+  },
 };
 
 export default TopNavTicker;
