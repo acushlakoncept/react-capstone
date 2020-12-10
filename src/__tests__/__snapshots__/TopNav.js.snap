@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders TopNav correctly 1`] = `
+<nav
+  className="navbar navbar-expand navbar-dark bg-dark"
+>
+  <a
+    className="navbar-brand"
+    href="/"
+  >
+    STOCKIST
+  </a>
+  <button
+    aria-controls="basic-navbar-nav"
+    aria-label="Toggle navigation"
+    className="navbar-toggler collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    aria-expanded={null}
+    className="navbar-collapse collapse"
+    id="basic-navbar-nav"
+  >
+    <div
+      className="mr-auto navbar-nav"
+      onKeyDown={[Function]}
+    >
+      <a
+        className="nav-link"
+        data-rb-event-key="/"
+        href="/"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Home
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key="/news"
+        href="/news"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Stock News
+      </a>
+    </div>
+    <form
+      className="form-inline"
+    >
+      <select
+        className="mr-sm-2 form-control"
+        onChange={[MockFunction]}
+      >
+        <option
+          value="active"
+        >
+          Most Active 
+        </option>
+        <option
+          value="gainers"
+        >
+          Most Gainers 
+        </option>
+        <option
+          value="losers"
+        >
+          Most Losers 
+        </option>
+      </select>
+      <button
+        className="btn btn-outline-success"
+        disabled={false}
+        type="button"
+      >
+        Filter by category
+      </button>
+    </form>
+  </div>
+</nav>
+`;

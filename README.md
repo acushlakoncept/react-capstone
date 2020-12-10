@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# STOCKIST WEB APP - REACT CAPSTONE PROJECT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project, I developed a frontend web application, catalogue of financial values using [Stock API](https://financialmodelingprep.com/developer/docs/)  and collect the data from my React Application.
 
-## Available Scripts
+The application features includes:
+- Listing of Most Active Stocks
+- Listing of Most Gainer's Stocks
+- Listing of Most Loser's Stocks
+- Filter between those 3, most active, gainers and losers
+- Open individual stock item
+- Search for a particular stock item, example 'AAPL'
+- Listing of the lastest stock news
+- Dynamic routes for individual stock item, example `/stocks/AAPL`
 
-In the project directory, you can run:
+![screenshot](./stockist.gif)
 
-### `yarn start`
+## Live Demo
+[Live Demo](https://cush-stocks.herokuapp.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Video Presentation
+[YouTube Link](https://youtu.be/l5s8WUlm1L8)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `yarn test`
+To get a local copy up and running follow these simple example steps.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `yarn build`
+Make sure Node.js is running on your local machine
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+~~~bash
+$ git clone https://github.com/acushlakoncept/react-capstone.git
+$ cd react-capstone
+~~~
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install modules:
 
-### `yarn eject`
+```
+yarn add
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Setup your API Key
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- I used the [Financial Modelling Prep API](https://financialmodelingprep.com/developer/docs/). Signup and get your key.
+- Create `.env` file, open it and add `REACT_APP_API_KEY=xxxxxxxxxxxxxxxxxxxxx`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Start server with:
 
-## Learn More
+```
+    yarn start or npm start
+```
+### Running Test
+Jest is used to run all the tests found in this application
+In order to run the test you can simply type `yarn test` or `npm run test`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Either ways, if you encounter any error while running either command, its likely you do not have `jest` installed globally, so please run `npm install -g jest-cli` then try again. That should do it.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Deployment instructions
 
-### Code Splitting
+```
+    git add .
+    git commit -m "ready for first push to heroku"  
+    heroku create $APP-NAME --buildpack mars/create-react-app
+    git push heroku $BRANCH_NAME:master
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Fire up your app by running `heroku open` Yay!!! your app has been deployed successfully.
 
-### Analyzing the Bundle Size
+# Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 **Uduak Essien**
 
-### Making a Progressive Web App
+- Github: [@acushlakoncept](https://github.com/acushlakoncept/)
+- Twitter: [@acushlakoncept](https://twitter.com/acushlakoncept)
+- Linkedin: [acushlakoncept](https://www.linkedin.com/in/acushlakoncept/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🤝 Contributing
 
-### Advanced Configuration
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Feel free to check the [issues page](issues/).
 
-### Deployment
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Give a ⭐️ if you like this project!
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+- [Microverse Inc](https://www.microverse.org/)
+- [Financial Modelling Prep API](https://financialmodelingprep.com/developer/docs/)

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Footer correctly 1`] = `
+<footer
+  className="footer"
+>
+  <div
+    className="container"
+  >
+    <span
+      className="text-muted"
+    >
+      ©
+       2020 All rights reserved | site by Acushla Koncepts.
+    </span>
+  </div>
+</footer>
+`;

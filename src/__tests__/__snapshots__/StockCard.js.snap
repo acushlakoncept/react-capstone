@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders StockCard correctly 1`] = `
+<div
+  className="m-2 bg-dark card"
+  style={
+    Object {
+      "width": "16rem",
+    }
+  }
+>
+  <div
+    className="d-flex flex-column card-body"
+  >
+    <div
+      className="text-light font-weight-bold card-title h5"
+    >
+      AAPL
+    </div>
+    <div
+      className="mb-2 text-muted card-subtitle h6"
+    >
+      Apple Inc
+    </div>
+    <p
+      className="d-flex justify-content-between text-success card-text"
+    >
+       230.54 USD
+       
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 16 16"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9.77 12.11l4.012-2.953a.647.647 0 000-1.114L9.771 5.09a.644.644 0 00-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"
+        />
+      </svg>
+      <em>
+        2.02%
+      </em>
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 16 16"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h1v16H0V0zm1 15h15v1H1v-1z"
+        />
+        <path
+          clipRule="evenodd"
+          d="M14.39 4.312L10.041 9.75 7 6.707l-3.646 3.647-.708-.708L7 5.293 9.959 8.25l3.65-4.563.781.624z"
+          fillRule="evenodd"
+        />
+        <path
+          clipRule="evenodd"
+          d="M10 3.5a.5.5 0 01.5-.5h4a.5.5 0 01.5.5v4a.5.5 0 01-1 0V4h-3.5a.5.5 0 01-.5-.5z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </p>
+    <div
+      className="mt-auto"
+    >
+      <a
+        className="btn btn-outline-success w-100"
+        href="\\\\stock\\\\AAPL"
+      >
+        Details
+      </a>
+    </div>
+  </div>
+</div>
+`;
